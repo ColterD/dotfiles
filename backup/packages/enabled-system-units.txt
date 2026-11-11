@@ -23,6 +23,7 @@ NetworkManager-wait-online.service
 paccache.timer
 plasmalogin.service
 remote-fs.target
+rtkit-daemon.service
 snapper-cleanup.timer
 systemd-oomd.service
 systemd-oomd.socket
@@ -31,6 +32,7 @@ systemd-resolved.service
 systemd-resolved-varlink.socket
 systemd-timesyncd.service
 systemd-userdbd.socket
+tailscaled.service
 ufw.service
 virtlockd-admin.socket
 virtlockd.socket

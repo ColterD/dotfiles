@@ -109,6 +109,7 @@ hermes-agent-desktop
 hplip
 hwdetect
 hwinfo
+hyphen-en
 inetutils
 iwd
 jfsutils
