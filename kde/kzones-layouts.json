@@ -1,0 +1,98 @@
+[
+    {
+        "name": "3 x 2 Grid",
+        "padding": 4,
+        "zones": [
+            {
+                "x": 0.0,
+                "y": 0,
+                "width": 33.3333,
+                "height": 50
+            },
+            {
+                "x": 33.3333,
+                "y": 0,
+                "width": 33.3333,
+                "height": 50
+            },
+            {
+                "x": 66.6667,
+                "y": 0,
+                "width": 33.3333,
+                "height": 50
+            },
+            {
+                "x": 0.0,
+                "y": 50,
+                "width": 33.3333,
+                "height": 50
+            },
+            {
+                "x": 33.3333,
+                "y": 50,
+                "width": 33.3333,
+                "height": 50
+            },
+            {
+                "x": 66.6667,
+                "y": 50,
+                "width": 33.3333,
+                "height": 50
+            }
+        ]
+    },
+    {
+        "name": "Priority Grid",
+        "padding": 4,
+        "zones": [
+            {
+                "x": 0,
+                "y": 0,
+                "height": 100,
+                "width": 25
+            },
+            {
+                "x": 25,
+                "y": 0,
+                "height": 100,
+                "width": 50
+            },
+            {
+                "x": 75,
+                "y": 0,
+                "height": 100,
+                "width": 25
+            }
+        ]
+    },
+    {
+        "name": "Quadrant Grid",
+        "padding": 4,
+        "zones": [
+            {
+                "x": 0,
+                "y": 0,
+                "height": 50,
+                "width": 50
+            },
+            {
+                "x": 0,
+                "y": 50,
+                "height": 50,
+                "width": 50
+            },
+            {
+                "x": 50,
+                "y": 50,
+                "height": 50,
+                "width": 50
+            },
+            {
+                "x": 50,
+                "y": 0,
+                "height": 50,
+                "width": 50
+            }
+        ]
+    }
+]
