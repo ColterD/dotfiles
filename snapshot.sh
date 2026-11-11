@@ -8,7 +8,7 @@
 # kwinoutputconfig.json (monitor serials), ksmserverrc (saved session: username, open apps),
 # anything under ~/.ssh or a keyring.
 set -euo pipefail
-D="$(cd "$(dirname "$0")" && pwd)"; B="$D/backup"; U="$(id -un)"
+D="$(cd "$(dirname "$0")" && pwd)"; B="$D/backup"
 CONFIG=(kglobalshortcutsrc kwinrc plasmashellrc plasma-org.kde.plasma.desktop-appletsrc kdeglobals
         kcminputrc powermanagementprofilesrc plasmanotifyrc spectaclerc mimeapps.list
         krunnerrc user-dirs.dirs libinput-gestures.conf plasma-localerc baloofilerc
