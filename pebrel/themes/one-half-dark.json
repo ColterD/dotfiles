@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "revision": 1,
+  "builtin": false,
+  "name": "One Half Dark",
+  "appearance": "dark",
+  "terminal": {
+    "background": "#282c34",
+    "foreground": "#dcdfe4",
+    "cursor": "#ffffff",
+    "cursor_text": "#282c34",
+    "cursor_stroke": "#ffffff",
+    "selection_background": "#474e5d",
+    "selection_foreground": "#dcdfe4",
+    "palette": [
+      "#282c34",
+      "#e06c75",
+      "#98c379",
+      "#e5c07b",
+      "#61afef",
+      "#c678dd",
+      "#56b6c2",
+      "#dcdfe4",
+      "#5a6374",
+      "#e06c75",
+      "#98c379",
+      "#e5c07b",
+      "#61afef",
+      "#c678dd",
+      "#56b6c2",
+      "#dcdfe4"
+    ]
+  },
+  "ui": {
+    "derive": false,
+    "background": "#282c34",
+    "sidebar": "#21252b",
+    "foreground": "#dcdfe4",
+    "muted": "#8b929e",
+    "accent": "#61afef",
+    "border": "#3e4451ff",
+    "selected": "#3e4451ff",
+    "frame": "#21252b",
+    "success": "#98c379",
+    "warning": "#e5c07b",
+    "danger": "#e06c75",
+    "info": "#56b6c2"
+  },
+  "typography": {
+    "enabled": true,
+    "font_family": "FiraCode Nerd Font",
+    "font_size": null,
+    "font_weight": 300,
+    "line_height": null,
+    "letter_spacing": null,
+    "ligatures": true,
+    "ui_font_family": null,
+    "ui_font_size": null
+  },
+  "layout": {
+    "padding_x": 10,
+    "padding_y": 8,
+    "radius": 10,
+    "gutter": 6,
+    "shadow": true,
+    "divider_width": 1
+  },
+  "effects": {
+    "material": "glass",
+    "blur": "mica"
+  },
+  "metadata": {
+    "base": "Nord"
+  },
+  "extensions": {}
+}

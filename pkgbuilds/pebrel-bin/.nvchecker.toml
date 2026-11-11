@@ -1,0 +1,5 @@
+[pebrel-bin]
+source = "github"
+github = "Kuddev/pebrel"
+use_latest_release = true
+prefix = "v"

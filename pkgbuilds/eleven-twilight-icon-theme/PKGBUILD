@@ -1,0 +1,23 @@
+# Maintainer: Your Name <you at example dot com>
+
+pkgname=eleven-twilight-icon-theme
+_name=ElevenTwilight
+pkgver=2.7.3
+pkgrel=1
+pkgdesc='Windows 11 inspired icon theme with reworked symbolic icons (fork of Eleven)'
+arch=('any')
+url='https://github.com/itotm/eleven-twilight'
+license=('GPL-3.0-only')
+depends=('hicolor-icon-theme')
+optdepends=('breeze-icons: fallback for icons the theme does not provide'
+            'adwaita-icon-theme: secondary fallback icons')
+options=('!strip')
+source=("$url/releases/download/v$pkgver/$_name-$pkgver.tar.gz")
+sha256sums=('d2943383c3a6505ca2d39afeef730bcee4a02f38361fd35e1eb04f6aca7497a5')
+
+package() {
+  install -d "$pkgdir/usr/share/icons"
+  cp -dr --no-preserve=ownership "$srcdir/$_name" "$pkgdir/usr/share/icons/"
+  find "$pkgdir/usr/share/icons/$_name" -type d -exec chmod 755 {} +
+  find "$pkgdir/usr/share/icons/$_name" -type f -exec chmod 644 {} +
+}

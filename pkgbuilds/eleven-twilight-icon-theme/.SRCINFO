@@ -1,0 +1,15 @@
+pkgbase = eleven-twilight-icon-theme
+	pkgdesc = Windows 11 inspired icon theme with reworked symbolic icons (fork of Eleven)
+	pkgver = 2.7.3
+	pkgrel = 1
+	url = https://github.com/itotm/eleven-twilight
+	arch = any
+	license = GPL-3.0-only
+	depends = hicolor-icon-theme
+	optdepends = breeze-icons: fallback for icons the theme does not provide
+	optdepends = adwaita-icon-theme: secondary fallback icons
+	options = !strip
+	source = https://github.com/itotm/eleven-twilight/releases/download/v2.7.3/ElevenTwilight-2.7.3.tar.gz
+	sha256sums = d2943383c3a6505ca2d39afeef730bcee4a02f38361fd35e1eb04f6aca7497a5
+
+pkgname = eleven-twilight-icon-theme

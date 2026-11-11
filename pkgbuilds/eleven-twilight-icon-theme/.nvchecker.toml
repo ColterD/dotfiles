@@ -1,0 +1,5 @@
+[eleven-twilight-icon-theme]
+source = "github"
+github = "itotm/eleven-twilight"
+use_latest_release = true
+prefix = "v"

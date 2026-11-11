@@ -1,0 +1,42 @@
+# Maintainer: Your Name <you at example dot com>
+
+pkgname=pebrel-bin
+_pkgname=pebrel
+pkgver=2.4.0
+pkgrel=1
+pkgdesc='AI-native, GPU-accelerated terminal emulator with SSH, persistent sessions and AI CLI integrations (official Linux preview build)'
+arch=('x86_64')
+url='https://github.com/Kuddev/pebrel'
+license=('GPL-3.0-only')
+# Linked directly (from the .deb's Depends) plus libraries the binary loads at runtime.
+depends=('glibc' 'gcc-libs' 'libxkbcommon' 'libxkbcommon-x11' 'libxcb'
+         'wayland' 'libglvnd' 'vulkan-icd-loader' 'dbus' 'hicolor-icon-theme')
+optdepends=('libsecret: save SSH passwords and key passphrases (secret-tool)'
+            'kwallet: Secret Service provider on KDE Plasma'
+            'gnome-keyring: Secret Service provider on other desktops'
+            'zsh: shell integration (prompt marks, working directory)'
+            'tmux: persistent sessions on SSH hosts')
+provides=("$_pkgname")
+conflicts=("$_pkgname")
+options=('!strip' '!debug')
+source=("$url/releases/download/v$pkgver/Pebrel-v$pkgver-linux-x64-preview.deb")
+sha256sums=('a46302426ec8bce9f50215cb2c27c18afdc768d0c71c41652a5125ac26609666')
+noextract=("Pebrel-v$pkgver-linux-x64-preview.deb")
+
+package() {
+  cd "$srcdir"
+  bsdtar -xOf "Pebrel-v$pkgver-linux-x64-preview.deb" 'data.tar.*' | bsdtar -xf - -C "$pkgdir"
+
+  # Debian completion locations -> Arch ones.
+  install -d "$pkgdir/usr/share/zsh/site-functions"
+  mv "$pkgdir/usr/share/zsh/vendor-completions/_pebrel" "$pkgdir/usr/share/zsh/site-functions/_pebrel"
+  rmdir "$pkgdir/usr/share/zsh/vendor-completions"
+
+  # Arch convention: license texts under /usr/share/licenses/$pkgname.
+  install -d "$pkgdir/usr/share/licenses/$pkgname"
+  cp -a "$pkgdir/usr/share/doc/$_pkgname/licenses/." "$pkgdir/usr/share/licenses/$pkgname/"
+
+  # The AI hook helper must sit beside the main binary: Pebrel resolves it from its own path,
+  # so a fixed /usr/bin location keeps Claude Code / Codex hooks valid while Pebrel is closed.
+  test -x "$pkgdir/usr/bin/pebrel-hook"
+}

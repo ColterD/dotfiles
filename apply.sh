@@ -12,7 +12,7 @@ install -m644 "$D/zsh/p10k.zsh" "$HOME/.p10k.zsh"
 say "fastfetch"
 install -Dm644 "$D/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
 
-say "Pebrel (font config + settings; the One Half Dark theme lives in ../pebrel-themes)"
+say "Pebrel (font config + settings; the One Half Dark theme source is in pebrel/themes)"
 install -Dm644 "$D/pebrel/pebrel.luau" "$HOME/.config/pebrel/pebrel.luau"
 install -Dm644 "$D/pebrel/pebrel_settings.txt" "$HOME/.config/pebrel/pebrel_settings.txt"
 

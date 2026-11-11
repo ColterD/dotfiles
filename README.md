@@ -8,7 +8,8 @@ Run it after re-applying the Windows Modern global theme, which resets several o
 |---|---|
 | `zsh/` | `~/.zshrc` (fastfetch banner before Powerlevel10k's instant prompt) and `~/.p10k.zsh` (clock without seconds) |
 | `fastfetch/` | Compact banner: no logo, eight lines |
-| `pebrel/` | Pebrel font config (Fira Code Nerd Font) and settings (AI hooks on, One Half Dark selected) |
+| `pebrel/` | Pebrel font config (Fira Code Nerd Font), settings (AI hooks on), and the One Half Dark theme source in `themes/` |
+| `pkgbuilds/` | Recipes for packages not in any repo: `pebrel-bin`, `eleven-twilight-icon-theme` |
 | `kvantum/` | `WindowsModernTranslucent`: Windows Modern Dark recolored to purple `#926EE4`, 15% window translucency |
 | `kde/` | Default-terminal settings and the KZones layouts (3 x 2 grid first) |
 | `zen/` | Zen Browser hardware video decode prefs and launcher override for NVIDIA |
@@ -17,10 +18,11 @@ Run it after re-applying the Windows Modern global theme, which resets several o
 
 - Repo: `kvantum`, `ttf-firacode-nerd`, `fastfetch`, `zsh`, `zsh-theme-powerlevel10k`, `openai-codex`
 - AUR: `kwin-scripts-kzones`, `claude-code`
-- Local recipes in `../aur`: `pebrel-bin`, `eleven-twilight-icon-theme`
+- Local recipes in `pkgbuilds/`: `pebrel-bin`, `eleven-twilight-icon-theme` (build with `makepkg -si` in each folder;
+  to publish one, clone its AUR repo and copy the three files in)
 - KDE Store: Win11OS cursor (moyash), then `ln -s Win11OS/Win11OS ~/.icons/Win11OS-moyash`
-- Theme: `../KDE-Windows-Modern` (branch `local-fixes`), and `../pebrel-themes/one-half-dark.json`
-  imported with `pebrel theme pack` + `pebrel theme import`
+- Theme: a clone of `Jeysef/KDE-Windows-Modern` with local fixes (branch `local-fixes`), and
+  `pebrel/themes/one-half-dark.json` imported with `pebrel theme pack` + `pebrel theme import`
 
 ## Backup and restore
 
