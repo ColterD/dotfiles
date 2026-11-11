@@ -26,11 +26,16 @@ Run it after re-applying the Windows Modern global theme, which resets several o
 
 ## Backup and restore
 
-- `./snapshot.sh` copies a reviewed whitelist of live config into `backup/`: KDE shortcuts, KWin,
-  panels, power, notifications, file associations, Vesktop, Shelly, micro, fish, bash, Twitch Drops
-  Miner settings and Claude Code hooks, plus package and enabled-service lists. Home paths are
-  stored as `@HOME@`.
-- `./restore.sh` puts them back (existing files are kept as `*.pre-restore`); `--list` previews.
+- `files.map` lists the files `apply.sh` installs (repo path | live path).
+- `./snapshot.sh` refreshes those files from the live system, then copies a reviewed whitelist of
+  other config into `backup/`: KDE shortcuts, KWin, panels, power, notifications, file
+  associations, Vesktop, Shelly, micro, fish, bash, Twitch Drops Miner settings and Claude Code
+  hooks, plus package and enabled-service lists. Home paths are stored as `@HOME@`, recent-file
+  lists are dropped, and a leak scan runs at the end. If the scan fails, do not commit.
+- `./apply.sh` copies the `files.map` entries back and re-applies KDE settings. A live file that
+  differs is kept as `*.pre-apply`. Run `./snapshot.sh` first if you changed settings since.
+- `./restore.sh --all` restores `backup/` (existing files are kept once as `*.pre-restore`);
+  `--list` previews. Files that call `pebrel-hook` are skipped until Pebrel is installed.
 - `backup/packages/` lists explicitly installed repo and foreign packages for reinstalling.
 
 ## Not stored here

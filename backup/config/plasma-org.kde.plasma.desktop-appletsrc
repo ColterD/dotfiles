@@ -351,4 +351,4 @@ AppletOrder=159;160;161;162;163;178;177
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/org.kde.dolphin.desktop,0,7009a6e8-c6f0-4e73-b248-92a91ab439e4,desktop:/New Folder,0,7009a6e8-c6f0-4e73-b248-92a91ab439e4,desktop:/steam.desktop,0,7009a6e8-c6f0-4e73-b248-92a91ab439e4
+screenMapping=desktop:/New Folder,0,7009a6e8-c6f0-4e73-b248-92a91ab439e4,desktop:/org.kde.dolphin.desktop,0,7009a6e8-c6f0-4e73-b248-92a91ab439e4,desktop:/steam.desktop,0,7009a6e8-c6f0-4e73-b248-92a91ab439e4

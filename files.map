@@ -1,0 +1,11 @@
+# repo path | live path (relative to $HOME). Used by apply.sh (repo -> live) and snapshot.sh (live -> repo).
+zsh/zshrc|.zshrc
+zsh/p10k.zsh|.p10k.zsh
+fastfetch/config.jsonc|.config/fastfetch/config.jsonc
+pebrel/pebrel.luau|.config/pebrel/pebrel.luau
+pebrel/pebrel_settings.txt|.config/pebrel/pebrel_settings.txt
+kvantum/kvantum.kvconfig|.config/Kvantum/kvantum.kvconfig
+kvantum/WindowsModernTranslucent|.config/Kvantum/WindowsModernTranslucent
+kde/60-terminal.conf|.config/environment.d/60-terminal.conf
+kde/xdg-terminals.list|.config/xdg-terminals.list
+zen/zen.desktop|.local/share/applications/zen.desktop

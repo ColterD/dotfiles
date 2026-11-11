@@ -120,7 +120,7 @@ LookAndFeelPackage=org.kde.windowsmodern.dark
 ShowDeleteCommand=false
 contrast=4
 frameContrast=0.2
-widgetStyle=kvantum
+widgetStyle=kvantum-dark
 
 [KFileDialog Settings]
 Allow Expansion=false
