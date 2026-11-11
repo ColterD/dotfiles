@@ -9,7 +9,7 @@
 # anything under ~/.ssh or a keyring.
 set -euo pipefail
 D="$(cd "$(dirname "$0")" && pwd)"; B="$D/backup"
-CONFIG=(kglobalshortcutsrc kwinrc plasmashellrc plasma-org.kde.plasma.desktop-appletsrc kdeglobals
+CONFIG=(powerdevilrc kglobalshortcutsrc kwinrc plasmashellrc plasma-org.kde.plasma.desktop-appletsrc kdeglobals
         kcminputrc powermanagementprofilesrc plasmanotifyrc spectaclerc mimeapps.list
         krunnerrc user-dirs.dirs libinput-gestures.conf plasma-localerc baloofilerc
         shelly/settings.json vesktop/settings.json vesktop/settings/settings.json

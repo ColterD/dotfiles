@@ -60,4 +60,13 @@ say "Zen: NVIDIA hardware video decode"
 ZP="$(find "$HOME/.config/zen" -maxdepth 1 -type d -name '*.Default (release)' 2>/dev/null | head -1 || true)"
 if [ -n "$ZP" ]; then install -m644 "$D/zen/user.js" "$ZP/user.js"; else note "no Zen profile yet; start Zen once, then re-run"; fi
 
+say "Power: performance profile, screens off after 15 min, no auto-sleep"
+pd() { kwriteconfig6 --file powerdevilrc --group AC --group "$1" --key "$2" "$3"; }
+pd Performance PowerProfile performance
+pd Display TurnOffDisplayWhenIdle true
+pd Display TurnOffDisplayIdleTimeoutSec 900
+pd Display TurnOffDisplayIdleTimeoutWhenLockedSec 900
+pd SuspendAndShutdown AutoSuspendAction 0
+command -v powerprofilesctl >/dev/null && powerprofilesctl set performance || true
+
 say "Done. Restart apps (or log out and in) to pick up style changes."
