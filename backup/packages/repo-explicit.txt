@@ -104,6 +104,8 @@ gutenprint
 gwenview
 haruna
 hdparm
+hermes-agent
+hermes-agent-desktop
 hplip
 hwdetect
 hwinfo
