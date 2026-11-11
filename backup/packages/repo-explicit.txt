@@ -92,6 +92,7 @@ fuse2
 fwupd
 ghostscript
 git
+github-cli
 glances
 gsfonts
 gst-libav
