@@ -27,6 +27,7 @@ Run it after re-applying the Windows Modern global theme, which resets several o
 ## Backup and restore
 
 - `files.map` lists the files `apply.sh` installs (repo path | live path).
+- `./leak-scan.sh` scans the tree for personal paths and credential patterns; CI runs it with ShellCheck.
 - `./snapshot.sh` refreshes those files from the live system, then copies a reviewed whitelist of
   other config into `backup/`: KDE shortcuts, KWin, panels, power, notifications, file
   associations, Vesktop, Shelly, micro, fish, bash, Twitch Drops Miner settings and Claude Code

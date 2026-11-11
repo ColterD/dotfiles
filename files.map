@@ -8,5 +8,5 @@ kvantum/kvantum.kvconfig|.config/Kvantum/kvantum.kvconfig
 kvantum/WindowsModernTranslucent|.config/Kvantum/WindowsModernTranslucent
 kde/60-terminal.conf|.config/environment.d/60-terminal.conf
 kde/xdg-terminals.list|.config/xdg-terminals.list
-zen/zen.desktop|.local/share/applications/zen.desktop
+kde/61-video-decode.conf|.config/environment.d/61-video-decode.conf
 kde/org.kde.KSplash.service|.local/share/dbus-1/services/org.kde.KSplash.service

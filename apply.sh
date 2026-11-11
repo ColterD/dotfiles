@@ -38,6 +38,9 @@ else
   note "pebrel not installed; skipped (settings fall back to the built-in theme until it is imported)"
 fi
 
+say "Session: never restore Firefox at login"
+kwriteconfig6 --file ksmserverrc --group General --key excludeApps firefox
+
 say "Icons, cursor, accent"
 kwriteconfig6 --file kdeglobals --group General --key AccentColor 146,110,228
 /usr/lib/plasma-changeicons ElevenTwilight >/dev/null 2>&1 || true

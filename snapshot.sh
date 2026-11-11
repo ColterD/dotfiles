@@ -5,11 +5,12 @@
 # Home paths are stored as @HOME@, recent-file lists are dropped, and the result is scanned for
 # credentials and personal paths. The scan failing means: do NOT commit until it is resolved.
 # Never add: browser profiles, cookies, shell history, ~/.claude.json, Claude/Codex app config,
-# kwinoutputconfig.json (monitor serials), anything under ~/.ssh or a keyring.
+# kwinoutputconfig.json (monitor serials), ksmserverrc (saved session: username, open apps),
+# anything under ~/.ssh or a keyring.
 set -euo pipefail
 D="$(cd "$(dirname "$0")" && pwd)"; B="$D/backup"; U="$(id -un)"
 CONFIG=(kglobalshortcutsrc kwinrc plasmashellrc plasma-org.kde.plasma.desktop-appletsrc kdeglobals
-        kcminputrc powermanagementprofilesrc plasmanotifyrc spectaclerc mimeapps.list ksmserverrc
+        kcminputrc powermanagementprofilesrc plasmanotifyrc spectaclerc mimeapps.list
         krunnerrc user-dirs.dirs libinput-gestures.conf plasma-localerc baloofilerc
         shelly/settings.json vesktop/settings.json vesktop/settings/settings.json
         vesktop/settings/quickCss.css fish/config.fish micro/settings.json micro/bindings.json
@@ -47,11 +48,4 @@ rm -rf "$B"; mv "$N" "$B"; trap - EXIT
 echo "snapshot written ($(find "$B" -type f | wc -l) backup files)"
 
 # 3. leak scan over everything that would be committed
-cd "$D"
-hits="$(grep -r -I -n -i -E "(/home/[a-z]|/run/media/|/mnt/[a-z]|\b$U\b|@gmail\.|192\.168\.[0-9]+\.[0-9]+|-----BEGIN [A-Z ]*PRIVATE KEY|sk-[A-Za-z0-9_-]{24,}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_|AKIA[0-9A-Z]{16}|xox[baprs]-[0-9A-Za-z-]{10,}|(api[_-]?key|secret|token|passw(or)?d)[\"']?[[:space:]]*[:=][[:space:]]*[\"'][^\"'\$<{ ]{12,}[\"'])" \
-  --exclude-dir=.git --exclude=snapshot.sh --exclude=README.md . | grep -v -E '/home/username/|zsh/p10k\.zsh:.*(asdf|/some/not/home)' || true)"
-if [ -n "$hits" ]; then
-  echo; echo "LEAK SCAN FOUND POSSIBLE PERSONAL DATA OR SECRETS - do not commit until resolved:" >&2
-  printf '%s\n' "$hits" | cut -c1-160 >&2; exit 2
-fi
-echo "leak scan: clean"
+"$D/leak-scan.sh"

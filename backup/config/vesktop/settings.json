@@ -26,5 +26,6 @@
     "spellCheckLanguages": [
         "en-US",
         "en"
-    ]
+    ],
+    "splashColor": "rgb(239, 239, 241)"
 }

@@ -1,0 +1,21 @@
+name: ci
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ShellCheck
+        run: shellcheck --severity=warning apply.sh snapshot.sh restore.sh leak-scan.sh
+      - name: Script syntax
+        run: for f in apply.sh snapshot.sh restore.sh leak-scan.sh; do bash -n "$f"; done
+      - name: JSON files parse
+        run: |
+          python3 -m json.tool kde/kzones-layouts.json > /dev/null
+          python3 -m json.tool pebrel/themes/one-half-dark.json > /dev/null
+      - name: Leak scan
+        run: ./leak-scan.sh
