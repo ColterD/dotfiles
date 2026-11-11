@@ -1,0 +1,10 @@
+arch-update.timer
+dmemcg-booster-user.service
+p11-kit-server.socket
+pipewire-pulse.socket
+pipewire.socket
+psd.service
+shelly-notifications.service
+speech-dispatcher.socket
+wireplumber.service
+xdg-user-dirs.service

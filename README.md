@@ -22,7 +22,17 @@ Run it after re-applying the Windows Modern global theme, which resets several o
 - Theme: `../KDE-Windows-Modern` (branch `local-fixes`), and `../pebrel-themes/one-half-dark.json`
   imported with `pebrel theme pack` + `pebrel theme import`
 
+## Backup and restore
+
+- `./snapshot.sh` copies a reviewed whitelist of live config into `backup/`: KDE shortcuts, KWin,
+  panels, power, notifications, file associations, Vesktop, Shelly, micro, fish, bash, Twitch Drops
+  Miner settings and Claude Code hooks, plus package and enabled-service lists. Home paths are
+  stored as `@HOME@`.
+- `./restore.sh` puts them back (existing files are kept as `*.pre-restore`); `--list` previews.
+- `backup/packages/` lists explicitly installed repo and foreign packages for reinstalling.
+
 ## Not stored here
 
-No credentials, tokens, browser profiles, shell history or session data. Files are copied
+No credentials, tokens, browser profiles, shell history, session data, monitor serial numbers,
+or Claude/Codex/ChatGPT app state. Files are copied
 from the live system by hand; update the copy here when you change one.

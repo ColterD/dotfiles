@@ -1,0 +1,11 @@
+ai.storyteller.artcraft-launcher
+ai.storyteller.craft-anything
+ai.storyteller.gridcraft
+ai.storyteller.pdfcraft
+ai.storyteller.photocraft
+ai.storyteller.wordcraft
+eleven-twilight-icon-theme
+kwin-scripts-kzones
+pebrel-bin
+twitch-drops-miner-bin
+visual-studio-code-bin
