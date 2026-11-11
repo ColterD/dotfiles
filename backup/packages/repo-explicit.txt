@@ -54,6 +54,8 @@ claude-code
 claude-desktop
 cpupower
 cryptsetup
+cuda
+cudnn
 cups
 cups-filters
 cups-pdf
