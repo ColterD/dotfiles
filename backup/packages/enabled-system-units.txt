@@ -24,6 +24,7 @@ paccache.timer
 plasmalogin.service
 remote-fs.target
 rtkit-daemon.service
+scx_loader.service
 snapper-cleanup.timer
 systemd-oomd.service
 systemd-oomd.socket
