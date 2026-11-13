@@ -14,3 +14,7 @@ source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Oh-My-Codex and user-installed tmux. The systemd timer owns OMX updates.
+export PATH="$HOME/.local/bin:$PATH"
+export OMX_AUTO_UPDATE=0

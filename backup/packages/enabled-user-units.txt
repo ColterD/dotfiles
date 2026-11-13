@@ -1,9 +1,11 @@
 arch-update.timer
 dmemcg-booster-user.service
 hermes-gateway.service
+omx-update.timer
 p11-kit-server.socket
 pipewire-pulse.socket
 pipewire.socket
+pkgup.timer
 shelly-notifications.service
 speech-dispatcher.socket
 wireplumber.service

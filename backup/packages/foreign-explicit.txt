@@ -4,8 +4,10 @@ ai.storyteller.gridcraft
 ai.storyteller.pdfcraft
 ai.storyteller.photocraft
 ai.storyteller.wordcraft
+curseforge
 eleven-twilight-icon-theme
 kwin-scripts-kzones
 pebrel-bin
+rustdesk-unattended-wayland
 twitch-drops-miner-bin
 visual-studio-code-bin

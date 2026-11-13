@@ -7,6 +7,9 @@ Seen=true
 [Applications][io.github.yapfast.Yapfast]
 Seen=true
 
+[Applications][org.qbittorrent.qBittorrent]
+Seen=true
+
 [Applications][vesktop]
 Seen=true
 

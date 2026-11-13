@@ -1,6 +1,8 @@
 {
-  "outputStyle": "Proactive",
-  "agentPushNotifEnabled": true,
+  "env": {
+    "CLAUDE_CODE_SHELL": "/usr/bin/zsh",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "hooks": {
     "SessionStart": [
       {
@@ -112,5 +114,23 @@
         ]
       }
     ]
+  },
+  "extraKnownMarketplaces": {
+    "omc": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
+      }
+    }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "node ${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hud/omc-hud.mjs"
+  },
+  "outputStyle": "Proactive",
+  "advisorModel": "opus",
+  "agentPushNotifEnabled": true,
+  "enabledPlugins": {
+    "oh-my-claudecode@omc": true
   }
 }
