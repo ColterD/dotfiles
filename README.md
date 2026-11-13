@@ -9,8 +9,9 @@ Run it after re-applying the Windows Modern global theme, which resets several o
 | `zsh/` | `~/.zshrc` (fastfetch banner before Powerlevel10k's instant prompt) and `~/.p10k.zsh` (clock without seconds) |
 | `fastfetch/` | Compact banner: no logo, eight lines |
 | `pebrel/` | Pebrel font config (Fira Code Nerd Font), settings (AI hooks on), and the One Half Dark theme source in `themes/` |
-| `pkgbuilds/` | Recipes for packages not in any repo: `pebrel-bin`, `eleven-twilight-icon-theme`, plus `pkgup.sh` (checks their GitHub releases; `pkgup.sh build <name>` bumps and builds one) |
-| `systemd/` | `pkgup.timer`: daily desktop notification when a local recipe has a newer release |
+| `pkgbuilds/` | Recipes for packages not in any repo: `pebrel-bin`, `eleven-twilight-icon-theme`, plus `pkgup.sh` (checks their GitHub releases, AUR builds and vendor feeds; `pkgup.sh build <name>` bumps and builds one) |
+| `systemd/` | `pkgup.timer`: daily desktop notification when a local recipe, an AUR build or a vendor feed is ahead of what is installed |
+| `docs/` | `UPDATES.md`: how every piece of this machine updates, and the gaps pacman and Shelly cannot see |
 | `kvantum/` | `WindowsModernTranslucent`: Windows Modern Dark recolored to purple `#926EE4`, 15% window translucency |
 | `kde/` | Default-terminal settings and the KZones layouts (3 x 2 grid first) |
 | `zen/` | Zen Browser hardware video decode prefs and launcher override for NVIDIA |
@@ -18,7 +19,8 @@ Run it after re-applying the Windows Modern global theme, which resets several o
 ## Expected packages
 
 - Repo: `kvantum`, `ttf-firacode-nerd`, `fastfetch`, `zsh`, `zsh-theme-powerlevel10k`, `openai-codex`
-- AUR: `kwin-scripts-kzones`, `claude-code`
+- AUR: `kwin-scripts-kzones`, `curseforge`, `rustdesk-unattended-wayland`, `twitch-drops-miner-bin`, `visual-studio-code-bin`
+- Repo packages that the AUR runs ahead of (build the AUR version by hand; see `docs/UPDATES.md`): `claude-code`, `claude-desktop`
 - Local recipes in `pkgbuilds/`: `pebrel-bin`, `eleven-twilight-icon-theme` (Shelly and pacman cannot see updates for these;
   `pkgbuilds/pkgup.sh check` can, and `pkgup.sh build <name>` makes the new package; install it with `sudo pacman -U`.
   To publish one, clone its AUR repo and copy the three files in)
