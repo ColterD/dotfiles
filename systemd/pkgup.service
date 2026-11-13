@@ -1,0 +1,6 @@
+[Unit]
+Description=Check local package recipes for new upstream releases
+
+[Service]
+Type=oneshot
+ExecStart=%h/Documents/Projects/dotfiles/pkgbuilds/pkgup.sh check --notify

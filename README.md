@@ -9,7 +9,8 @@ Run it after re-applying the Windows Modern global theme, which resets several o
 | `zsh/` | `~/.zshrc` (fastfetch banner before Powerlevel10k's instant prompt) and `~/.p10k.zsh` (clock without seconds) |
 | `fastfetch/` | Compact banner: no logo, eight lines |
 | `pebrel/` | Pebrel font config (Fira Code Nerd Font), settings (AI hooks on), and the One Half Dark theme source in `themes/` |
-| `pkgbuilds/` | Recipes for packages not in any repo: `pebrel-bin`, `eleven-twilight-icon-theme` |
+| `pkgbuilds/` | Recipes for packages not in any repo: `pebrel-bin`, `eleven-twilight-icon-theme`, plus `pkgup.sh` (checks their GitHub releases; `pkgup.sh build <name>` bumps and builds one) |
+| `systemd/` | `pkgup.timer`: daily desktop notification when a local recipe has a newer release |
 | `kvantum/` | `WindowsModernTranslucent`: Windows Modern Dark recolored to purple `#926EE4`, 15% window translucency |
 | `kde/` | Default-terminal settings and the KZones layouts (3 x 2 grid first) |
 | `zen/` | Zen Browser hardware video decode prefs and launcher override for NVIDIA |
@@ -18,8 +19,10 @@ Run it after re-applying the Windows Modern global theme, which resets several o
 
 - Repo: `kvantum`, `ttf-firacode-nerd`, `fastfetch`, `zsh`, `zsh-theme-powerlevel10k`, `openai-codex`
 - AUR: `kwin-scripts-kzones`, `claude-code`
-- Local recipes in `pkgbuilds/`: `pebrel-bin`, `eleven-twilight-icon-theme` (build with `makepkg -si` in each folder;
-  to publish one, clone its AUR repo and copy the three files in)
+- Local recipes in `pkgbuilds/`: `pebrel-bin`, `eleven-twilight-icon-theme` (Shelly and pacman cannot see updates for these;
+  `pkgbuilds/pkgup.sh check` can, and `pkgup.sh build <name>` makes the new package; install it with `sudo pacman -U`.
+  To publish one, clone its AUR repo and copy the three files in)
+- Self-updating: the `ai.storyteller.*` Craft App Suite is updated by its own launcher whenever the launcher is opened
 - KDE Store: Win11OS cursor (moyash), then `ln -s Win11OS/Win11OS ~/.icons/Win11OS-moyash`
 - Theme: a clone of `Jeysef/KDE-Windows-Modern` with local fixes (branch `local-fixes`), and
   `pebrel/themes/one-half-dark.json` imported with `pebrel theme pack` + `pebrel theme import`

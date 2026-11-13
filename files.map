@@ -12,3 +12,5 @@ kde/61-video-decode.conf|.config/environment.d/61-video-decode.conf
 kde/62-gaming.conf|.config/environment.d/62-gaming.conf
 kde/63-hermes-gpu.conf|.config/environment.d/63-hermes-gpu.conf
 kde/org.kde.KSplash.service|.local/share/dbus-1/services/org.kde.KSplash.service
+systemd/pkgup.service|.config/systemd/user/pkgup.service
+systemd/pkgup.timer|.config/systemd/user/pkgup.timer

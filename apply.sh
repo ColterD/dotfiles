@@ -69,4 +69,8 @@ pd Display TurnOffDisplayIdleTimeoutWhenLockedSec 900
 pd SuspendAndShutdown AutoSuspendAction 0
 command -v powerprofilesctl >/dev/null && powerprofilesctl set performance || true
 
+say "Local package update check (pkgup.timer, daily)"
+systemctl --user daemon-reload
+systemctl --user enable --now pkgup.timer >/dev/null 2>&1 || note "could not enable pkgup.timer; run: systemctl --user enable --now pkgup.timer"
+
 say "Done. Restart apps (or log out and in) to pick up style changes."

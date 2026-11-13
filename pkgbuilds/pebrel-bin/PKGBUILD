@@ -2,7 +2,7 @@
 
 pkgname=pebrel-bin
 _pkgname=pebrel
-pkgver=2.4.0
+pkgver=2.5.7
 pkgrel=1
 pkgdesc='AI-native, GPU-accelerated terminal emulator with SSH, persistent sessions and AI CLI integrations (official Linux preview build)'
 arch=('x86_64')
@@ -20,7 +20,7 @@ provides=("$_pkgname")
 conflicts=("$_pkgname")
 options=('!strip' '!debug')
 source=("$url/releases/download/v$pkgver/Pebrel-v$pkgver-linux-x64-preview.deb")
-sha256sums=('a46302426ec8bce9f50215cb2c27c18afdc768d0c71c41652a5125ac26609666')
+sha256sums=('5e4f836f09a472f22d5ec96467b9227887933367f66810a127465b848728ef66')
 noextract=("Pebrel-v$pkgver-linux-x64-preview.deb")
 
 package() {
